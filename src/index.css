@@ -1,0 +1,732 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  margin-top: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+h3 {
+  color: #ff69b4;
+}
+
+body.galaxy-mode h4 {
+  color: aqua;
+}
+
+h5 {
+  color: #adff2f;
+}
+
+h6 {
+  color: white;
+}
+
+.header {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: left;
+  margin: 20px 0;
+  color: #adff2f;
+}
+
+/* Start NavBar CSS */
+.navbar {
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-right: 15px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 32px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+/* Light/Dark/Galaxy mode buttons css on Navbar*/
+.mode-button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode .custom-cursor {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .custom-cursor {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+}
+
+/* Hover states for Galaxy Mode */
+body.galaxy-mode .navbar-link:hover {
+  color: #ff69b4;
+}
+
+body.galaxy-mode .navbar-link.active {
+  color: #ff69b4;
+}
+
+/* Hover states for Light Mode */
+body.light-mode .navbar-link:hover {
+  color: #007bff;
+}
+
+body.light-mode .navbar-link.active {
+  color: #007bff;
+}
+
+/* Hover states for Dark Mode */
+body.dark-mode .navbar-link:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .navbar-link.active {
+  color: #bb86fc;
+}
+/* Non-active state adjustments */
+.mode-button:not(.active).light {
+  background-color: transparent;
+  color: #007bff;
+}
+
+.mode-button:not(.active).dark {
+  background-color: transparent;
+  color: #bb86fc;
+}
+
+.mode-button:not(.active).galaxy {
+  background-color: transparent;
+  color: #ff69b4;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #aca9a9;
+  color: #000000;
+}
+
+body.light-mode .navbar {
+  background-color: #add8e6;
+  color: #000;
+}
+
+body.light-mode .navbar-link {
+  color: #000;
+}
+
+body.light-mode .navbar-link.active {
+  color: #007bff;
+}
+
+body.light-mode .mode-button {
+  border-color: #000;
+  color: #000;
+}
+
+body.light-mode .mode-button.light {
+  background-color: #007bff;
+  color: #fff;
+}
+
+body.light-mode .mode-button.dark {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .mode-button.galaxy {
+  background-color: transparent;
+  color: #ff69b4;
+}
+
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6,
+body.light-mode .header,
+body.light-mode .home-text,
+body.light-mode .accordion-languages,
+body.light-mode .accordion-hobbies .accordion-experiences,
+body.light-mode .experience-list {
+  color: #000 !important;
+}
+
+body.light-mode .home-page-welcome {
+  color: #000;
+}
+
+body.light-mode .accordion-custom {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+body.light-mode .experience-list {
+  color: #000 !important;
+}
+
+body.light-mode footer {
+  background-color: #add8e6;
+  color: #333;
+  text-shadow: none;
+}
+
+body.light-mode .custom-cursor {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+body.light-mode .accordion-custom.accordion-languages h4 {
+  color: #007bff !important;
+}
+
+body.light-mode .accordion-custom.accordion-hobbies h4 {
+  color: #007bff !important;
+}
+
+body.light-mode .accordion-custom.accordion-experiences h4 {
+  color: #007bff !important;
+}
+
+/* Dark Mode CSS */
+body.dark-mode {
+  background: conic-gradient(from 0deg, #000000, #6a0dad, #000000);
+}
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar-link {
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar-link.active {
+  color: #bb86fc;
+}
+
+body.dark-mode .mode-button {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+}
+
+body.dark-mode .mode-button.light {
+  background-color: #000;
+  color: #007bff;
+}
+
+body.dark-mode .mode-button.dark {
+  background-color: #bb86fc;
+  color: #fff;
+}
+
+body.dark-mode .mode-button.galaxy {
+  background-color: transparent;
+  color: #ff69b4;
+}
+
+body.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .custom-cursor {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+}
+
+/* Specific Component Styles for Dark Mode */
+body.dark-mode .background-video {
+  display: none; /* Hide the video in dark mode */
+}
+
+body.dark-mode .profile-picture-container {
+  color: #e0e0e0;
+}
+
+body.dark-mode .accordion-custom {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .large-text {
+  color: #e0e0e0;
+}
+
+body.dark-mode .experience-section {
+  color: #e0e0e0;
+}
+
+body.dark-mode h3 {
+  color: #bb86fc;
+}
+
+body.dark-mode h4 {
+  color: #bb86fc;
+}
+
+body.dark-mode h5 {
+  color: #bb86fc;
+}
+
+body.dark-mode h6 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  color: #ff69b4;
+}
+
+body.dark-mode .home-page-welcome {
+  color: #e0e0e0;
+}
+
+body.dark-mode .experience-list {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .accordion-custom.accordion-languages h4 {
+  color: #007bff !important;
+}
+
+body.dark-mode .accordion-custom.accordion-hobbies h4 {
+  color: #007bff !important;
+}
+
+body.dark-mode .accordion-custom.accordion-experiences h4 {
+  color: #007bff !important;
+}
+
+/*Mobile device CSS*/
+/* CSS Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+  .experience-section-first {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-container {
+    height: 300px;
+  }
+
+  .carousel-container img {
+    height: 100%;
+    width: auto;
+  }
+
+  .header {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .accordion-custom .accordion-summary-content {
+    text-align: center;
+  }
+
+  .large-text {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+
+  .experience-section {
+    padding: 0 10px;
+  }
+
+  .section {
+    margin-bottom: 50px;
+  }
+
+  .custom-cursor {
+    display: none; /* Hide custom cursor on mobile */
+  }
+}
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 10px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .navbar-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quote {
+    font-size: 24px !important;
+    margin-bottom: 1rem !important;
+    height: auto !important;
+  }
+
+  .quote-agreement {
+    margin-bottom: 2rem !important;
+  }
+
+  .navbar-link {
+    font-size: 24px;
+  }
+
+  .header {
+    font-size: 2rem;
+  }
+
+  .custom-cursor {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Accordion adjustments */
+  .accordion-custom {
+    width: 100%;
+  }
+
+  .carousel img {
+    max-height: 200px;
+  }
+
+  .project-card {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    width: 90% !important;
+    margin: 0.5rem auto !important;
+    height: auto !important;
+  }
+
+  .project-card .MuiCardContent-root {
+    padding: 16px !important;
+  }
+
+  .project-card .MuiTypography-h5 {
+    font-size: 1.5rem !important;
+  }
+
+  .project-card .MuiTypography-body2 {
+    font-size: 1rem !important;
+  }
+
+  .project-card .MuiButton-root {
+    font-size: 0.875rem !important;
+    padding: 8px 12px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .MuiCard-root {
+    width: 90% !important;
+    margin: 0.5rem auto !important;
+    height: auto !important;
+  }
+
+  .MuiCardContent-root {
+    padding: 16px !important;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.25rem !important;
+  }
+
+  .MuiTypography-h6 {
+    font-size: 1rem !important;
+  }
+
+  .MuiTypography-body1 {
+    font-size: 0.875rem !important;
+  }
+
+  .MuiTypography-subtitle1,
+  .MuiTypography-subtitle2 {
+    font-size: 0.875rem !important;
+  }
+
+  .MuiBox-root {
+    padding: 10px !important;
+  }
+
+  .MuiGrid-root {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-certifications-container {
+    margin-top: 20px;
+  }
+
+  .certifications-card,
+  .education-card {
+    margin-top: 40px;
+  }
+
+  .finger-image {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Medium devices (tablets, 600px and up) */
+@media (min-width: 600px) and (max-width: 992px) {
+  .main-content {
+    padding: 20px;
+    margin-top: 80px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .navbar-list {
+    flex-direction: row;
+  }
+
+  .navbar-link {
+    font-size: 28px;
+  }
+
+  .header {
+    font-size: 2.5rem;
+  }
+
+  .custom-cursor {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Accordion adjustments */
+  .accordion-custom {
+    width: 80%;
+  }
+
+  .carousel img {
+    max-height: 300px;
+  }
+
+  .project-card {
+    width: 48%;
+    margin: 1rem;
+  }
+
+  .button-container {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 960px) {
+  .project-card {
+    width: 80% !important;
+    margin: 1rem auto !important;
+    height: auto !important;
+  }
+
+  .project-card .MuiCardContent-root {
+    padding: 20px !important;
+  }
+
+  .project-card .MuiTypography-h5 {
+    font-size: 1.75rem !important;
+  }
+
+  .project-card .MuiTypography-body2 {
+    font-size: 1.25rem !important;
+  }
+
+  .project-card .MuiButton-root {
+    font-size: 1rem !important;
+    padding: 10px 14px !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 960px) {
+  .header {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .MuiCard-root {
+    width: 80% !important;
+    margin: 1rem auto !important;
+    height: auto !important;
+  }
+
+  .MuiCardContent-root {
+    padding: 20px !important;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.5rem !important;
+  }
+
+  .MuiTypography-h6 {
+    font-size: 1.25rem !important;
+  }
+
+  .MuiTypography-body1 {
+    font-size: 1rem !important;
+  }
+
+  .MuiTypography-subtitle1,
+  .MuiTypography-subtitle2 {
+    font-size: 1rem !important;
+  }
+
+  .MuiBox-root {
+    padding: 50px !important;
+  }
+
+  .MuiGrid-root {
+    padding: 0 !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 992px) {
+  .project-card {
+    width: 48%;
+    margin: 0.5rem;
+    height: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  .certifications-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .finger-image {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .navbar-list {
+    flex-direction: row;
+  }
+  @media (min-width: 601px) {
+    .certifications-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .finger-image {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  .navbar-link {
+    font-size: 32px;
+  }
+
+  .header {
+    font-size: 3rem;
+  }
+
+  .custom-cursor {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Accordion adjustments */
+  .accordion-custom {
+    width: 100%;
+  }
+
+  .carousel img {
+    max-height: 400px;
+  }
+
+  .project-card {
+    width: 30%;
+    margin: 1rem;
+  }
+
+  .button-container {
+    flex-direction: row;
+  }
+}

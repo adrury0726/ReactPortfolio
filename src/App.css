@@ -1,0 +1,121 @@
+/* Galaxy Background Video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-page-welcome {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.profile-picture-container {
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-text {
+  color: white;
+}
+
+.accordion-custom {
+  background-color: rgba(218, 112, 214, 0.2) !important;
+}
+
+.accordion-languages,
+.accordion-hobbies .accordion-experiences {
+  color: #adff2f !important;
+}
+
+.accordion-experiences {
+  color: white !important;
+}
+
+.accordion-hobbies {
+  color: white !important;
+}
+
+.large-text {
+  font-size: 1.5rem;
+  padding-left: 20px;
+}
+
+.section {
+  margin-bottom: 70px;
+}
+
+.experience-list {
+  color: white !important;
+  font-weight: normal !important;
+  list-style-type: disc;
+  margin-left: 5rem;
+  font-size: 1.5rem;
+}
+
+.experience-section {
+  margin-bottom: 2rem;
+}
+
+/* Light Mode Styles for specific components */
+body.light-mode .background-video {
+  display: none; /* Hide the video in light mode */
+}
+
+body.light-mode .profile-picture-container {
+  color: #000;
+}
+
+body.light-mode .accordion-custom {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-mode .accordion-languages,
+body.light-mode .accordion-hobbies .accordion-experiences {
+  color: #000 !important;
+}
+
+body.light-mode .accordion-experiences {
+  color: #000 !important;
+}
+
+body.light-mode .accordion-hobbies {
+  color: #000 !important;
+}
+
+body.light-mode .large-text {
+  color: #000;
+}
+
+body.light-mode .experience-section {
+  color: #000;
+}
