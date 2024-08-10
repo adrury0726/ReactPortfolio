@@ -13,9 +13,7 @@ const Projects = () => {
   const projectData = [
     {
       title: "Price Digest API Integration",
-      description:
-        "The purpose of this project was to integrate Price Digest into our company's website. This was done by writing code in C# in order to do the API calls. In this project, I established a database connection, creating error logging, and would pull the data from the API calls and store them into our SQL Server tables. From there, I'd take the data and create numerous stored procedures that were being used in order to insert, update, and select the data for display. This also included using HTML/CSS/JavaScript in order to customize the display.",
-      githubLink: "https://github.com/adrury0726/Price-Digest-API-Integration",
+      description: `The purpose of this project was to integrate Price Digest into our company's website. This was done by writing code in C# in order to do the API calls. In this project, I established a database connection, creating error logging, and would pull the data from the API calls and store them into our SQL Server tables. From there, I'd take the data and create numerous stored procedures that were being used in order to insert, update, and select the data for display. This also included using HTML/CSS/JavaScript in order to customize the display. ${styledMessage}`,
     },
     {
       title: "Auto Decisioning",
@@ -60,6 +58,12 @@ const Projects = () => {
       description:
         "This was my first resume I built showcasing some of my HTML/CSS/JavaScript skills. While my skills have greatly improved, I still like to keep this to showcase where I started vs where I am now.",
       githubLink: "https://adrury0726.github.io/aarondrury.github.io/",
+    },
+    {
+      title: "React Portfolio",
+      description:
+        "This is the code that I'm using for the website you're looking at right now! I created this project in order to showcase some of my front-end skills using React, as well as create a strong portfolio for recruiters to view.",
+      githubLink: "https://github.com/adrury0726/ReactPortfolio/tree/master",
     },
   ];
 

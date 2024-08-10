@@ -6,7 +6,7 @@ const CustomCursor = () => {
   const cursorRef = useRef(null);
   const requestRef = useRef(null);
   const previousTimeRef = useRef(null);
-  const delay = 0.05; // Adjust the delay factor as needed
+  const delay = 0.04;
 
   useEffect(() => {
     const handleMouseMove = (event) => {

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   Accordion,
   AccordionSummary,
@@ -47,6 +47,18 @@ const Hobbies = () => {
     height: "auto",
     marginTop: "16px",
   };
+
+  const [videoSrc, setVideoSrc] = useState("");
+
+  //We'll add lazy loading here, as we don't need it to load IMMEDIATELY upon the website loading. This optimizes performance.
+  useEffect(() => {
+    // Lazy load the video source after the component has mounted
+    const timer = setTimeout(() => {
+      setVideoSrc(MckennaVideo);
+    }, 1000); // Optional delay to mimic lazy loading
+
+    return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
+  }, []);
 
   const items = [
     { src: Josiah, alt: "Josiah" },
@@ -229,7 +241,7 @@ const Hobbies = () => {
           <Grid item xs={12} md={6} style={containerStyle}>
             <img src={DogsImage} alt="Dogs" style={imageStyle} />
             <video width="100%" controls style={videoStyle} poster={Thumbnail}>
-              <source src={MckennaVideo} type="video/mp4" />
+              {videoSrc && <source src={videoSrc} type="video/mp4" />}
               Your browser does not support the video tag.
             </video>
           </Grid>

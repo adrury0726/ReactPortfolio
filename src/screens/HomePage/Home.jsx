@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import Typewriter from "./Typewriter";
 import ProfilePicture from "./ProfilePicture";
 import QuoteAgreement from "./QuoteAgreement";
@@ -7,12 +7,19 @@ import { ThemeContext } from "./BackgroundThemes/ThemeContext";
 
 function Home() {
   const { theme } = useContext(ThemeContext);
+  const textRef = useRef(null);
+  const [height, setHeight] = useState(null);
 
   const quoteText =
     "OUR DREAMS MAY SEEM IMPOSSIBLE, BUT OUR CREATIVITY CAN TURN THEM INTO REALITY";
   const quoteAuthor = "-MALALA YOUSAFZAI 🙏";
-
   const combinedQuote = `${quoteText}\n${quoteAuthor}`;
+
+  useEffect(() => {
+    if (textRef.current) {
+      setHeight(textRef.current.getBoundingClientRect().height);
+    }
+  }, []);
 
   return (
     <Box
@@ -37,14 +44,30 @@ function Home() {
           fontSize: { xs: "24px", sm: "32px" },
           textAlign: "center",
           maxWidth: "80%",
-          whiteSpace: "pre-wrap",
-          height: { xs: "auto", sm: "150px" },
+          height: height || "auto",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Typewriter text={combinedQuote} speed={40} pauseDuration={3000} />
+        <div
+          ref={textRef}
+          style={{
+            visibility: "hidden",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            whiteSpace: "pre-wrap",
+          }}
+        >
+          {combinedQuote}
+        </div>
+
+        {height && (
+          <Typewriter text={combinedQuote} speed={40} pauseDuration={3000} />
+        )}
       </Box>
       <ProfilePicture />
     </Box>

@@ -12,30 +12,27 @@ body {
 
 .main-content {
   flex: 1;
-  padding: 30px;
+  padding: 40px; /* Increased padding for a cleaner layout */
   margin-top: 100px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif; /* Updated to a modern font */
 }
 
-h3 {
-  color: #ff69b4;
+h3,
+h4,
+h5,
+h6,
+.header {
+  font-weight: 700; /* Bold headers */
 }
 
-body.galaxy-mode h4 {
-  color: aqua;
-}
-
-h5 {
-  color: #adff2f;
-}
-
-h6 {
-  color: white;
+body {
+  font-weight: 400; /* Regular weight for body text */
+  line-height: 1.6; /* Improved readability */
 }
 
 .header {
@@ -43,7 +40,7 @@ h6 {
   font-weight: bold;
   text-align: left;
   margin: 20px 0;
-  color: #adff2f;
+  color: #00796b; /* Updated to a modern teal */
 }
 
 /* Start NavBar CSS */
@@ -52,7 +49,6 @@ h6 {
   top: 0;
   right: 0;
   padding: 15px;
-  background: transparent;
   display: flex;
   justify-content: flex-end;
   z-index: 1000;
@@ -71,7 +67,7 @@ h6 {
 
 .navbar-link {
   text-decoration: none;
-  color: #ffffff;
+  color: #00796b;
   font-weight: bold;
   font-size: 32px;
   position: relative;
@@ -79,28 +75,33 @@ h6 {
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00796b;
   color: white;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
   padding: 20px;
 }
 
-/* Light/Dark/Galaxy mode buttons css on Navbar*/
+/* Light/Dark/Galaxy mode buttons css on Navbar */
 .mode-button {
   background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #00796b;
+  color: #00796b;
   padding: 8px 16px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mode-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .custom-cursor {
   position: fixed;
   width: 60px;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -131,11 +132,11 @@ body.galaxy-mode .navbar-link.active {
 
 /* Hover states for Light Mode */
 body.light-mode .navbar-link:hover {
-  color: #007bff;
+  color: #004d40;
 }
 
 body.light-mode .navbar-link.active {
-  color: #007bff;
+  color: #004d40;
 }
 
 /* Hover states for Dark Mode */
@@ -146,10 +147,10 @@ body.dark-mode .navbar-link:hover {
 body.dark-mode .navbar-link.active {
   color: #bb86fc;
 }
-/* Non-active state adjustments */
+
 .mode-button:not(.active).light {
   background-color: transparent;
-  color: #007bff;
+  color: #00796b;
 }
 
 .mode-button:not(.active).dark {
@@ -164,36 +165,52 @@ body.dark-mode .navbar-link.active {
 
 /* Light Mode Styles */
 body.light-mode {
-  background-color: #aca9a9;
-  color: #000000;
+  background: conic-gradient(
+    from 180deg,
+    #ffffff,
+    #90caf9,
+    #f5f5f5,
+    #42a5f5,
+    #ffffff
+  );
+  color: #333333;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
 }
 
 body.light-mode .navbar {
-  background-color: #add8e6;
-  color: #000;
+  background-color: #a5a5a7;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .navbar-link {
-  color: #000;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+body.light-mode .navbar-link:hover {
+  color: white;
 }
 
 body.light-mode .navbar-link.active {
-  color: #007bff;
+  color: white;
 }
 
 body.light-mode .mode-button {
-  border-color: #000;
-  color: #000;
+  border-color: #64b5f6;
+  color: #64b5f6;
 }
 
 body.light-mode .mode-button.light {
-  background-color: #007bff;
+  background-color: blue;
   color: #fff;
 }
 
 body.light-mode .mode-button.dark {
   background-color: #fff;
-  color: #000;
+  color: black;
 }
 
 body.light-mode .mode-button.galaxy {
@@ -218,7 +235,10 @@ body.light-mode .home-page-welcome {
 }
 
 body.light-mode .accordion-custom {
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .experience-list {
@@ -226,25 +246,25 @@ body.light-mode .experience-list {
 }
 
 body.light-mode footer {
-  background-color: #add8e6;
-  color: #333;
-  text-shadow: none;
+  background-color: #a5a5a7;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .custom-cursor {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(12, 11, 11, 0.5);
 }
 
 body.light-mode .accordion-custom.accordion-languages h4 {
-  color: #007bff !important;
+  color: #4169e1 !important;
 }
 
 body.light-mode .accordion-custom.accordion-hobbies h4 {
-  color: #007bff !important;
+  color: #4169e1 !important;
 }
 
 body.light-mode .accordion-custom.accordion-experiences h4 {
-  color: #007bff !important;
+  color: #4169e1 !important;
 }
 
 /* Dark Mode CSS */
@@ -276,7 +296,7 @@ body.dark-mode .mode-button.light {
 }
 
 body.dark-mode .mode-button.dark {
-  background-color: #bb86fc;
+  background-color: #7416e7;
   color: #fff;
 }
 
@@ -300,7 +320,7 @@ body.dark-mode .custom-cursor {
 
 /* Specific Component Styles for Dark Mode */
 body.dark-mode .background-video {
-  display: none; /* Hide the video in dark mode */
+  display: none;
 }
 
 body.dark-mode .profile-picture-container {
@@ -359,7 +379,122 @@ body.dark-mode .accordion-custom.accordion-experiences h4 {
   color: #007bff !important;
 }
 
-/*Mobile device CSS*/
+/* Galaxy Mode Styles*/
+body.galaxy-mode {
+  background-color: #000;
+  background-image: radial-gradient(circle at 50% 50%, #4b0082, #000000);
+  color: #adff2f;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body.galaxy-mode .navbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+}
+
+body.galaxy-mode .navbar-link {
+  color: #ffffff;
+}
+
+body.galaxy-mode .navbar-link.active {
+  color: #ff69b4;
+}
+
+body.galaxy-mode .mode-button {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+body.galaxy-mode .mode-button.light {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aqua;
+}
+
+body.galaxy-mode .mode-button.dark {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+body.galaxy-mode .mode-button.galaxy {
+  background-color: #ff69b4;
+  color: #ffffff;
+}
+
+body.galaxy-mode h3 {
+  color: #ff69b4;
+}
+
+body.galaxy-mode h4 {
+  color: aqua;
+}
+
+body.galaxy-mode h5 {
+  color: #adff2f;
+}
+
+body.galaxy-mode h6 {
+  color: #ffffff;
+}
+
+body.galaxy-mode .header {
+  color: #adff2f;
+}
+
+body.galaxy-mode .home-page-welcome {
+  color: #ffffff;
+}
+
+body.galaxy-mode .accordion-custom {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.galaxy-mode .experience-list {
+  color: #ffffff !important;
+}
+
+body.galaxy-mode footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+body.galaxy-mode .custom-cursor {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Slightly transparent white cursor */
+}
+
+body.galaxy-mode .accordion-custom.accordion-languages h4 {
+  color: aqua !important; /* Aqua headers in accordion */
+}
+
+body.galaxy-mode .accordion-custom.accordion-hobbies h4 {
+  color: aqua !important;
+}
+
+body.galaxy-mode .accordion-custom.accordion-experiences h4 {
+  color: aqua !important;
+}
+
+/* Additional Styles for Galaxy Mode to ensure they aren't overridden */
+body.galaxy-mode .experience-section {
+  color: #ffffff; /* Ensure text remains white in experience sections */
+}
+
+body.galaxy-mode .experience-section h4 {
+  color: #adff2f !important; /* Ensure headers remain neon green */
+}
+
+body.galaxy-mode .experience-list {
+  color: #ffffff !important;
+}
+
+/* Mobile device CSS */
 /* CSS Media Queries for Mobile Devices */
 @media (max-width: 600px) {
   .experience-section-first {

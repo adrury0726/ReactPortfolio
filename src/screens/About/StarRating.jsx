@@ -26,7 +26,7 @@ const StarRating = () => {
 
   const ratingTextColor =
     theme === "light" && value > 0
-      ? "#007bff"
+      ? "#4169e1"
       : theme === "dark"
       ? "#ff69b4"
       : "#ff4081";
@@ -38,7 +38,7 @@ const StarRating = () => {
         <Box
           sx={{
             position: "relative",
-            backgroundColor: theme === "light" ? "grey" : "#1e1e1e",
+            backgroundColor: theme === "light" ? "#a5a5a7" : "#1e1e1e",
             color: "#ff4081",
             padding: 2,
             borderRadius: 1,
@@ -49,8 +49,7 @@ const StarRating = () => {
           }}
         >
           <Typography variant="h5" gutterBottom>
-            I love galaxy colors. Out of 5 stars, how much do you like the color
-            theme?
+            Out of 5 stars, how much do you like this color theme?
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Rating
