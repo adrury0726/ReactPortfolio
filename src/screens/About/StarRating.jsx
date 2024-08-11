@@ -1,11 +1,27 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Box, Typography, Rating, Grid } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
+import Cookies from "js-cookie";
 import { ThemeContext } from "../HomePage/BackgroundThemes/ThemeContext";
 
 const StarRating = () => {
   const { theme } = useContext(ThemeContext);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(null);
+
+  useEffect(() => {
+    const savedRating = Cookies.get(`rating-${theme}`);
+    if (savedRating) {
+      setValue(parseInt(savedRating));
+    } else {
+      setValue(null);
+    }
+  }, [theme]);
+
+  const handleRatingChange = (event, newValue) => {
+    setValue(newValue);
+    //Setting sameSIte to 'LAX' to remove cookie warnings since we're not sending cookies to third parties.
+    Cookies.set(`rating-${theme}`, newValue, { expires: 365, sameSite: "LAX" });
+  };
 
   const getRatingText = (rating) => {
     switch (rating) {
@@ -43,7 +59,7 @@ const StarRating = () => {
             padding: 2,
             borderRadius: 1,
             zIndex: 1000,
-            marginTop: { xs: "80px", sm: "100px" }, // Ensure it is below the Navbar
+            marginTop: { xs: "80px", sm: "100px" },
             marginLeft: { xs: "auto", md: 0 },
             marginRight: { xs: "auto", md: 0 },
           }}
@@ -55,9 +71,7 @@ const StarRating = () => {
             <Rating
               name="galaxy-colors-rating"
               value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-              }}
+              onChange={handleRatingChange}
               size="medium"
               emptyIcon={
                 <StarIcon style={{ color: "white" }} fontSize="inherit" />

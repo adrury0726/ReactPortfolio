@@ -27,7 +27,7 @@ const ProjectCard = ({ title, description, githubLink, otherLink }) => {
       className="project-card"
       sx={{
         width: 345,
-        height: 400,
+        height: 525,
         margin: "1rem",
         display: "flex",
         flexDirection: "column",
@@ -52,7 +52,24 @@ const ProjectCard = ({ title, description, githubLink, otherLink }) => {
           <TypingText text={description} speed={5} />
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "0.5rem",
+        }}
+      >
+        {otherLink && (
+          <Button
+            size="small"
+            sx={{ color: buttonColor }}
+            href={otherLink}
+            target="_blank"
+          >
+            Try it out!
+          </Button>
+        )}
         {githubLink && (
           <Button
             size="small"
@@ -62,16 +79,6 @@ const ProjectCard = ({ title, description, githubLink, otherLink }) => {
             startIcon={<GitHubIcon />}
           >
             View Project on GitHub
-          </Button>
-        )}
-        {otherLink && (
-          <Button
-            size="small"
-            sx={{ color: buttonColor }}
-            href={otherLink}
-            target="_blank"
-          >
-            View Project
           </Button>
         )}
       </CardActions>

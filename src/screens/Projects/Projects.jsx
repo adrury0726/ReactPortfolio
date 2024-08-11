@@ -24,6 +24,13 @@ const Projects = () => {
                        attention. ${styledMessage}`,
     },
     {
+      title: "Movie Selection API",
+      description:
+        "This project was created in order to build a front-end React application where the user could make API calls to a website called https://www.omdbapi.com, which contains a database of movies where you can pull in the movie title, cover, and the length of the movie. These calls are initiated after a user has typed in at least 4 characters in the search bar. I created an application where a user could pull in a movie, give it a rating, and then add it to their list. After more than 1 movie is added, you'll notice that we have an average movie length and star rank is being calculated. We also keep count of the number of movies selected and rated, as well as the movie covers. The user is also able to remove them from their list.",
+      githubLink: "https://github.com/adrury0726/MoviesAPI/tree/master",
+      otherLink: "https://aaronsmovieapi.netlify.app/",
+    },
+    {
       title: "Chat Room",
       description:
         "This was a Python project I decided to build for fun. I built a chatroom where people would be able to enter a chat and do simply that, chat with each other! It allowed for each person that connected to the server to be able to enter the name they wanted to go by, or their nickname. This was developed using a local default IP address and host, which allows for the chat room to only operate on a local computer.",
