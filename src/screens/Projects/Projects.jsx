@@ -10,6 +10,9 @@ const Projects = () => {
   const messageColor = theme === "dark" ? "#FFD700" : "red";
   const styledMessage = `<span style="font-style: italic; text-decoration: underline; color: ${messageColor};">${specialMessage}</span>`;
 
+  const movieLinkColor = theme === "light" ? "green" : "aqua";
+  const movieStyleMsg = `<a href="https://www.omdbapi.com" style="text-decoration: underline; color: ${movieLinkColor};" target="_blank"><strong>https://www.omdbapi.com</strong></a>`;
+
   const projectData = [
     {
       title: "Price Digest API Integration",
@@ -25,8 +28,7 @@ const Projects = () => {
     },
     {
       title: "Movie Selection API",
-      description:
-        "This project was created in order to build a front-end React application where the user could make API calls to a website called https://www.omdbapi.com, which contains a database of movies where you can pull in the movie title, cover, and the length of the movie. These calls are initiated after a user has typed in at least 4 characters in the search bar. I created an application where a user could pull in a movie, give it a rating, and then add it to their list. After more than 1 movie is added, you'll notice that we have an average movie length and star rank is being calculated. We also keep count of the number of movies selected and rated, as well as the movie covers. The user is also able to remove them from their list.",
+      description: `This project was created in order to build a front-end React application where the user could make API calls to a website called ${movieStyleMsg}, which contains a database of movies where you can pull in the movie title, cover, and the length of the movie. These calls are initiated after a user has typed in at least 4 characters in the search bar. I created an application where a user could pull in a movie, give it a rating, and then add it to their list. After more than 1 movie is added, you'll notice that we have an average movie length and star rank is being calculated. We also keep count of the number of movies selected and rated, as well as the movie covers. The user is also able to remove them from their list.`,
       githubLink: "https://github.com/adrury0726/MoviesAPI/tree/master",
       otherLink: "https://aaronsmovieapi.netlify.app/",
     },

@@ -49,7 +49,7 @@ const ProjectCard = ({ title, description, githubLink, otherLink }) => {
             color: textColor,
           }}
         >
-          <TypingText text={description} speed={5} />
+          <TypingText text={description} speed={1} />
         </Typography>
       </CardContent>
       <CardActions
@@ -67,7 +67,7 @@ const ProjectCard = ({ title, description, githubLink, otherLink }) => {
             href={otherLink}
             target="_blank"
           >
-            Try it out!
+            Click Here To Try it out!
           </Button>
         )}
         {githubLink && (
